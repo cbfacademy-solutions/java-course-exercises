@@ -16,7 +16,7 @@ public class CurrentAccount extends Account {
      * @param overdraftLimit The overdraft limit associated with the current account.
      *                       This represents the maximum negative balance allowed for the account.
      */
-    public CurrentAccount(long accountNumber, double balance, double overdraftLimit) {
+    public CurrentAccount(int accountNumber, double balance, double overdraftLimit) {
         super(accountNumber, balance);
         this.overdraftLimit = overdraftLimit;
     }
