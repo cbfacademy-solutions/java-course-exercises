@@ -5,7 +5,7 @@ package com.cbfacademy.accounts;
  * It provides methods to deposit, withdraw, and retrieve account information.
  */
 public class Account {
-    protected long accountNumber;
+    protected int accountNumber;
     protected double balance;
 
     /**
@@ -14,7 +14,7 @@ public class Account {
      * @param accountNumber The account number to be assigned to the new account.
      * @param balance The initial balance of the new account.
      */
-    public Account(long accountNumber, double balance) {
+    public Account(int accountNumber, double balance) {
         this.accountNumber = accountNumber;
         this.balance = balance;
     }
@@ -55,7 +55,7 @@ public class Account {
      *
      * @return The account number.
      */
-    public long getAccountNumber() {
+    public int getAccountNumber() {
         return accountNumber;
     }
 

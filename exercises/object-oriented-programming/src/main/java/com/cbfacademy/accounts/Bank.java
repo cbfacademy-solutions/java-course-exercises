@@ -35,7 +35,7 @@ public class Bank {
      * @return The newly created Account object.
      */
     public Account openAccount(double balance, String accountType) {
-        long accountNumber = generateAccountNumber();
+        int accountNumber = generateAccountNumber();
         Account account = null;
 
         switch (accountType.toLowerCase()) {
@@ -65,7 +65,7 @@ public class Bank {
      *
      * @param accountNumber The account number of the account to be closed.
      */
-    public void closeAccount(long accountNumber) {
+    public void closeAccount(int accountNumber) {
         Iterator<Account> iterator = accounts.iterator();
 
         while (iterator.hasNext()) {
@@ -74,6 +74,7 @@ public class Bank {
             if (account.getAccountNumber() == accountNumber) {
                 iterator.remove();
                 System.out.println("Account " + accountNumber + " has been closed.");
+
                 return;
             }
         }
@@ -113,7 +114,7 @@ public class Bank {
      *
      * @param accountNumber The account number of the account to be notified.
      */
-    private void sendOverdraftLetter(long accountId) {
+    private void sendOverdraftLetter(int accountId) {
         System.out.println("Overdraft letter sent to holder of account no.: " + accountId);
     }
 
@@ -123,12 +124,13 @@ public class Bank {
      * 
      * @return A unique account number
      */
-    private long generateAccountNumber(){
+    private int generateAccountNumber(){
         // Finding the maximum accountNumber using a loop
-        long maxAccountNumber = 10000000L;
+        int maxAccountNumber = 10000000;
 
         for (Account account : accounts) {
-            long currentAccountNumber = account.getAccountNumber();
+            int currentAccountNumber = account.getAccountNumber();
+
             if (currentAccountNumber > maxAccountNumber) {
                 maxAccountNumber = currentAccountNumber;
             }
