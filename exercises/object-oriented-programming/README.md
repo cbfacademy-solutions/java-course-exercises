@@ -7,17 +7,30 @@
 The goal of these exercises is to practise OOP concepts:
 - Encapsulation
 - Inheritance
-- Polymorphism
+- Abstraction
 
 For the exercises below, we've provided the starter project above.
 
-## :pushpin: Immutability
+## :pushpin: Classes & Objects
 
-Inside the `people` package, create a class called `ImmutablePerson` with the following characteristics:
-- a required first name
-- an optional middle name
-- a required last name
-- an optional list of nicknames
+Inside the `cars` package, create a class called `Car` with the following private fields:
+- `String make`
+- `String model`
+- `int year`
+
+and the following public methods:
+- `Car(String make, String model, int year)` - constructor that accepts initial values for the fields
+- `String getMake()` - returns the car make
+- `String getModel()` - returns the car model
+- `int getYear()` - returns the year the car was made
+- `String getDetails()` - returns the car details, including the make, model and year
+
+Create a class called `Showroom` with a public method `List<Car> getCars()` that returns a list containing the following three `Car` objects:
+- a Volvo V40 from 2012
+- a Porsche Panamera from 2009
+- an Audi A3 from 2018
+
+In the `main` method of the `App` class, instantiate a `Showroom` object, call `getCars()` and print the details for each `Car` instance in the list.
 
 ## :pushpin: Inheritance
 
