@@ -16,10 +16,12 @@ public class Bank {
 
     /**
      * Constructs a new Bank object with an empty list of accounts.
-     * Use this constructor to create a new bank instance that starts with no accounts.
-     * To manage accounts, use the provided methods to open or close accounts and perform other banking operations.
+     * Use this constructor to create a new bank instance that starts with no
+     * accounts.
+     * To manage accounts, use the provided methods to open or close accounts and
+     * perform other banking operations.
      *
-     * @param interestRate The interest rate for savings accounts.
+     * @param interestRate   The interest rate for savings accounts.
      * @param overdraftLimit The overdraft limit for current accounts.
      */
     public Bank(double interestRate, double overdraftLimit) {
@@ -28,10 +30,12 @@ public class Bank {
     }
 
     /**
-     * Opens a new account of the specified type and adds it to the bank's account list.
+     * Opens a new account of the specified type and adds it to the bank's account
+     * list.
      *
-     * @param balance The initial balance of the new account.
-     * @param accountType The type of account to be created (e.g., "basic", "savings" or "current").
+     * @param balance     The initial balance of the new account.
+     * @param accountType The type of account to be created (e.g., "basic",
+     *                    "savings" or "current").
      * @return The newly created Account object.
      */
     public Account openAccount(double balance, String accountType) {
@@ -44,10 +48,12 @@ public class Bank {
                 account = new Account(accountNumber, balance);
                 break;
             case "savings":
-                account = new SavingsAccount(accountNumber, balance, interestRate); // You can set the interest rate as needed
+                account = new SavingsAccount(accountNumber, balance, interestRate); // You can set the interest rate as
+                                                                                    // needed
                 break;
             case "current":
-                account = new CurrentAccount(accountNumber, balance, overdraftLimit); // You can set the overdraft limit as needed
+                account = new CurrentAccount(accountNumber, balance, overdraftLimit); // You can set the overdraft limit
+                                                                                      // as needed
                 break;
         }
 
@@ -61,7 +67,8 @@ public class Bank {
 
     /**
      * Closes the account with the specified account number.
-     * If the account is found and successfully closed, it will be removed from the bank's account list.
+     * If the account is found and successfully closed, it will be removed from the
+     * bank's account list.
      *
      * @param accountNumber The account number of the account to be closed.
      */
@@ -80,11 +87,12 @@ public class Bank {
         }
         System.out.println("Account " + accountNumber + " not found. No action taken.");
     }
-    
+
     /**
      * Updates all accounts in the bank.
      * If the account is a savings account, interest will be applied.
-     * If the account is a current account and currently overdrawn, a letter will be sent to the holder.
+     * If the account is a current account and currently overdrawn, a letter will be
+     * sent to the holder.
      */
     public void update() {
         for (Account account : accounts) {
@@ -97,7 +105,7 @@ public class Bank {
             }
         }
     }
-    
+
     /**
      * Pays a dividend into all accounts in the bank.
      *
@@ -110,7 +118,8 @@ public class Bank {
     }
 
     /**
-     * Sends an overdraft warning letter to the holder of the specified account number.
+     * Sends an overdraft warning letter to the holder of the specified account
+     * number.
      *
      * @param accountNumber The account number of the account to be notified.
      */
@@ -120,11 +129,12 @@ public class Bank {
 
     /**
      * Generate an account number for a new account.
-     * Creates an eight-digit account number and increments by 1 for every new account
+     * Creates an eight-digit account number and increments by 1 for every new
+     * account
      * 
      * @return A unique account number
      */
-    private int generateAccountNumber(){
+    private int generateAccountNumber() {
         // Finding the maximum accountNumber using a loop
         int maxAccountNumber = 10000000;
 
