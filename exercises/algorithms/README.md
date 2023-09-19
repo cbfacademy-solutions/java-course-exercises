@@ -1,3 +1,5 @@
+README.md
+
 # Popular Algorithms
 
 [![Java Language](https://img.shields.io/badge/PLATFORM-OpenJDK-3A75B0.svg?style=for-the-badge)][1]
@@ -81,35 +83,84 @@ return pIndex + 1
 
 ## :pushpin: Searching
 
-### Linear Search
-
-Write a linear search algorithm which:
-- takes a list of elements (these can be numbers, strings, ...) as the first input
-- the element to be found as the second input
-- and sequential searches through the list, starting from one end, and checking every element of the list until the desired element is found.
-
-### Binary Search<sup>3<sup>
-
+### Binary Search
 Here is the pseudocode for the Binary Search algorithm.
 
-Given what we've learned about this algorithm, create a program that implements it in Java.
-
+NB: remember that this algorithm expects to be given sorted data otherwise the results will be unpredictable.
 ```txt
 do until the pointers low and high meet each other.
+    //find the index at the mid point of the given array (add the lowest index to the highest index and divide by two, e.g. 0 + 10 / 2 = 5)
     mid = (low + high)/2
-    if (x == arr[mid])
+    //if the target value is the mid point element
+    if (target == arr[mid])
+        // return the index number for the mid point of the array 
         return mid
-    else if (x > arr[mid]) // x is on the right side
+    // if the target value is higher than the value of the mid point element 
+    else if (target > arr[mid]) // target could be on the right side of the array
+        // set the low index to the right of the middle 
         low = mid + 1
-    else                       // x is on the left side
+    // in all other cases
+    else                       // target could be on the left side of the array
+        // set the high index to the left of the middle
         high = mid - 1
 ```
 
-<sup>3</sup><sub>Compare with [this implementation][6]</sub>
+Given this algorithm:
+- in the `search` folder, create a new class `BinarySearch` that implements the provided `Search` interface
+- in `BinarySearch` implement the `search` method
+  - if the target value is found in the given array, the method should return the index for that value
+  - if the target value is not present, the method should return -1
+
+## :white_check_mark: Verify Your Implementation
+
+To verify that your code works as expected, run the `BinarySearchTest` tests.
+
+In your terminal, ensure that you are in the `algorithms` folder.
+Then run the following command in your terminal.
+
+```shell
+./mvnw clean test
+```
+
+If you are on Windows, run this command instead:
+
+```shell
+mvnw.cmd clean test
+```
+
+### Tests Results
+
+Your implementation is correct when all tests pass:
+
+```shell
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] ├─ Basic Test Suite - 0.018s
+[INFO] │  └─ ✔ creates the app - 0.01s
+[INFO] ├─ Search Algorithm Exercise - 0.01s
+[INFO] │  ├─ ✔ search returns -1 when the target is not found - 0.002s
+[INFO] │  ├─ ✔ search returns -1 when the array has no elements - 0s
+[INFO] │  ├─ ✔ returns this unit's name - 0.001s
+[INFO] │  ├─ ✔ search returns the index of the target value when it is in the middle of the array - 0s
+[INFO] │  ├─ ✔ search returns the index of the target value when it is in the upper end of the array - 0s
+[INFO] │  └─ ✔ search returns the index of the target value when it is in the lower end of the array - 0s
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.038 s
+[INFO] Finished at: 2023-09-04T20:11:32+01:00
+[INFO] ------------------------------------------------------------------------
+
+```
 
 [1]: https://docs.oracle.com/javase/11/docs/api/index.html
 [2]: https://junit.org/junit5/
 [3]: https://maven.apache.org/
 [4]: https://www.programiz.com/java-programming/examples/merge-sort
 [5]: https://www.programiz.com/java-programming/examples/quick-sort
-[6]: https://www.programiz.com/java-programming/examples/binary-search
