@@ -3,6 +3,7 @@ package com.cbfacademy.accounts;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * The Bank class represents a bank that can create and manage accounts.
@@ -43,10 +44,6 @@ public class Bank {
         Account account = null;
 
         switch (accountType.toLowerCase()) {
-            case "":
-            case "basic":
-                account = new Account(accountNumber, balance);
-                break;
             case "savings":
                 account = new SavingsAccount(accountNumber, balance, interestRate); // You can set the interest rate as
                                                                                     // needed
@@ -54,6 +51,9 @@ public class Bank {
             case "current":
                 account = new CurrentAccount(accountNumber, balance, overdraftLimit); // You can set the overdraft limit
                                                                                       // as needed
+                break;
+            default:
+                account = new Account(accountNumber, balance);
                 break;
         }
 
@@ -100,7 +100,9 @@ public class Bank {
                 ((SavingsAccount) account).applyInterest();
             } else if (account instanceof CurrentAccount) {
                 if (account.getBalance() < 0) {
-                    sendOverdraftLetter(account.getAccountNumber());
+                    String message = "Please note your account is in overdraft.";
+
+                    sendLetter(account.getAccountNumber(), message);
                 }
             }
         }
@@ -118,13 +120,41 @@ public class Bank {
     }
 
     /**
-     * Sends an overdraft warning letter to the holder of the specified account
-     * number.
+     * Retrieves an Account object by its account number.
+     *
+     * @param accountNumber The account number to search for.
+     * @return The Account object matching the provided account number, or null if
+     *         not found.
+     */
+    public Account getAccount(int accountNumber) {
+        Optional<Account> optionalAccount = accounts.stream()
+                .filter(account -> account.getAccountNumber() == accountNumber)
+                .findFirst();
+
+        return optionalAccount.orElse(null);
+    }
+
+    /**
+     * Returns an array of all account numbers held by the bank.
+     * 
+     * @return An array of integers representing the account numbers.
+     */
+    public int[] getAccountNumbers() {
+        return accounts.stream()
+                .mapToInt(Account::getAccountNumber)
+                .toArray();
+    }
+
+    /**
+     * Sends a letter to the holder of the specified account.
      *
      * @param accountNumber The account number of the account to be notified.
+     * @param message       The message to be sent.
      */
-    private void sendOverdraftLetter(int accountId) {
-        System.out.println("Overdraft letter sent to holder of account no.: " + accountId);
+    public void sendLetter(int accountNumber, String message) {
+        if (getAccount(accountNumber) != null) {
+            System.out.println(message);
+        }
     }
 
     /**

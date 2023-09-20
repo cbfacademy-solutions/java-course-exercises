@@ -56,4 +56,8 @@ public class CurrentAccount extends Account {
 
         return "Account no: " + accountNumber + ". Balance: " + sign + String.format("%.2f", Math.abs(balance));
     }
+
+    public double getOverdraftLimit() {
+        return overdraftLimit;
+    }
 }
