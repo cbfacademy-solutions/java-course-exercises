@@ -67,26 +67,17 @@ public class FileManager {
 
         // Write the reversed lines to the output file
         try (BufferedWriter writer = Files.newBufferedWriter(outputPath, StandardCharsets.UTF_8)) {
-            for (String line : lines) {
-                writer.write(line);
-                writer.newLine();
-            }
-        }
-    }
+            Boolean firstLine = true;
 
-    /**
-     * Main method for testing the FileManager class.
-     *
-     * @param args Command line arguments (not used).
-     */
-    public static void main(String[] args) {
-        FileManager fileManager = new FileManager();
-        try {
-            // Test the methods
-            fileManager.copy("input.txt", "output.txt");
-            fileManager.reverseLines("input.txt", "reversed.txt");
-        } catch (IOException e) {
-            e.printStackTrace();
+            for (String line : lines) {
+                if (firstLine) {
+                    firstLine = !firstLine;
+                } else {
+                    writer.newLine();
+                }
+
+                writer.write(line);
+            }
         }
     }
 }
