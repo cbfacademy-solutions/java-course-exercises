@@ -1,12 +1,12 @@
 package com.cbfacademy;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.Collections;
 import java.util.List;
 
@@ -15,16 +15,20 @@ import java.util.List;
  */
 public class FileManager {
     /**
-     * Get a BufferedReader for the provided file.
+     * Read a text file using a BufferedReader and return a Stream of lines.
      *
      * @param filename The name of the file to read.
-     * @return A BufferedReader for the specified file.
-     * @throws IOException If an I/O error occurs while opening the file.
+     * @return A Stream of lines from the file.
+     * @throws IOException If an I/O error occurs while reading the file.
      */
-    public BufferedReader getReader(String filename) throws IOException {
+    public List<String> readFile(String filename) throws IOException {
         Path filePath = Paths.get(filename);
 
-        return Files.newBufferedReader(filePath, StandardCharsets.UTF_8);
+        // try (BufferedReader reader = new BufferedReader(new
+        // FileReader(filePath.toString()))) {
+        // return reader.lines().collect(Collectors.toList());
+        // }
+        return Files.readAllLines(filePath);
     }
 
     /**
@@ -38,11 +42,21 @@ public class FileManager {
         Path inputPath = Paths.get(inputFile);
         Path outputPath = Paths.get(outputFile);
 
+        // try (BufferedReader reader = new BufferedReader(new FileReader(inputPath.toString()));
+        //         BufferedWriter writer = new BufferedWriter(new FileWriter(outputPath.toString()))) {
+        //     String line;
+
+        //     while ((line = reader.readLine()) != null) {
+        //         writer.write(line);
+        //         writer.newLine();
+        //     }
+        // }
+
         // Ensure the output file's parent directory exists
         Files.createDirectories(outputPath.getParent());
 
         // Copy the contents from input to output
-        Files.copy(inputPath, outputPath, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+        Files.copy(inputPath, outputPath, StandardCopyOption.REPLACE_EXISTING);
     }
 
     /**

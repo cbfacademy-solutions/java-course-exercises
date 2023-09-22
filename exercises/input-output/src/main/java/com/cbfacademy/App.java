@@ -1,7 +1,7 @@
 package com.cbfacademy;
 
-import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.List;
 
 public class App {
     private static FileManager fileManager = new FileManager();
@@ -20,24 +20,25 @@ public class App {
 
     /**
      * Reads the contents of a file and outputs line-by-line to the console
+     * 
      * @param filePath
      * @throws IOException
      */
     public static void readFile(String filePath) throws IOException {
-        BufferedReader reader = fileManager.getReader(filePath);
-        String line = reader.readLine();
+        List<String> lines = fileManager.readFile(filePath);
+
         System.out.println("\n**************************");
         System.out.println(String.format("Contents of %s:", filePath));
         System.out.println("**************************");
 
-        while (line != null) {
+        for (String line : lines) {
             System.out.println(line);
-            line = reader.readLine();
         }
     }
 
     /**
      * Reverses the contents of a file and saves to a new file
+     * 
      * @param sourcePath
      * @param targetPath
      * @throws IOException
