@@ -9,9 +9,4 @@ public interface Search {
      * @param target      The value to be searched for in the array
      */
     int search(int[] sortedArray, int target);
-
-    /**
-     * Returns the exercise name
-     */
-    String getName();
 }
