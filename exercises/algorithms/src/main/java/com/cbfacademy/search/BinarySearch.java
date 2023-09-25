@@ -22,13 +22,5 @@ public class BinarySearch implements Search {
                 high = mid - 1;
         }
         return -1;
-
-    }
-
-    /**
-     * Returns the exercise name
-     */
-    public String getName() {
-        return "Binary Search Algorithm Exercise";
     }
 }
