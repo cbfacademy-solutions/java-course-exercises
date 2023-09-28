@@ -37,6 +37,7 @@ In the `main` method of the `App` class, instantiate a `Showroom` object, call `
 ### Part 1
 
 Inside the `accounts` package, create a class called `Account` with the following members:
+- `Account(int accountNumber, double balance)` - constructor
 - `double balance` - instance variable
 - `int accountNumber` - instance variable
 - `double getBalance()` - returns the current account balance
@@ -54,12 +55,17 @@ Inside the `accounts` package, create a class called `Account` with the followin
 Using the `Account` class as a base class, create two derived classes:
 
 `SavingsAccount` with the following members, in addition to the attributes of the `Account` class:
-- `double interest` - instance variable
+- `SavingsAccount(int accountNumber, double balance, double interestRate)` - constructor
+- `double interestRate` - instance variable
 - `void applyInterest()` applies interest to the account
+- `double getInterestRate()` - returns the current interest rate
+- `void setInterestRate()` - sets the interest rate
 
 `CurrentAccount` with the following members, in addition to the attributes of the `Account` class:
+- `CurrentAccount(int accountNumber, double balance, double overdraftLimit)` - constructor
 - `double overdraftLimit` - instance variable
 - `double getOverdraftLimit()` - returns the current overdraft limit
+- `void setOverdraftLimit()` - sets the overdraft limit
 
 #### Notes
 Ensure that you have overridden methods of the `Account` class where necessary in the derived classes.
