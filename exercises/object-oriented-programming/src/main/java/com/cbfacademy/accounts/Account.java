@@ -40,7 +40,9 @@ public class Account {
     public double withdraw(double requested) {
         double granted = 0;
 
-        requested = Math.abs(requested);
+        if (requested <= 0) {
+            return granted;
+        }
 
         if (balance >= requested) {
             balance -= requested;
