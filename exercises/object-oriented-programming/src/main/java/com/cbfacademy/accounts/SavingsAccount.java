@@ -32,6 +32,14 @@ public class SavingsAccount extends Account {
     }
 
     /**
+     * Set the interest rate for this savings account
+     * @param interestRate The interest rate associated with the savings account
+     */
+    public void setInterestRate(double interestRate) {
+        this.interestRate = interestRate;
+    }
+
+    /**
      * Applies interest to the savings account based on its current balance and interest rate.
      * The interest is calculated and deposited into the savings account balance.
      * For example, if the interest rate is 0.05 (5%), £100 balance would receive £5 in interest.

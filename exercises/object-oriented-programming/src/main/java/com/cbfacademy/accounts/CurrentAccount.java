@@ -57,7 +57,20 @@ public class CurrentAccount extends Account {
         return "Account no: " + accountNumber + ". Balance: " + sign + String.format("%.2f", Math.abs(balance));
     }
 
+    /**
+     * Retrieves the overdraft limit associated with this current account.
+     *
+     * @return The overdraft limit.
+     */
     public double getOverdraftLimit() {
         return overdraftLimit;
+    }
+
+    /**
+     * Set the overdraft for this current account
+     * @param overdraftLimit The overdraft limit granted for this current account
+     */
+    public void setInterestRate(double overdraftLimit) {
+        this.overdraftLimit = overdraftLimit;
     }
 }
