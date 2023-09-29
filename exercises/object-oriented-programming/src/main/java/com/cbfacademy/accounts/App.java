@@ -3,24 +3,32 @@ package com.cbfacademy.accounts;
 public class App {
     public static void main(String[] args) {
         Bank bank = new Bank(0.05, 1000);
+        double[] transactions = { 20, -10, -100, 73.11, -11, 5 };
 
-        Account account1 = bank.openAccount(100, "basic");
-        Account account2 = bank.openAccount(2.5, "basic");
-        Account account3 = bank.openAccount(1000, "savings");
-        Account account4 = bank.openAccount(200, "savings");
-        Account account5 = bank.openAccount(1, "current");
-        Account account6 = bank.openAccount(100, "current");
+        bank.openAccount(100, "basic");
+        bank.openAccount(2.5, "basic");
+        bank.openAccount(1000, "savings");
+        bank.openAccount(200, "savings");
+        bank.openAccount(1, "current");
+        bank.openAccount(100, "current");
 
-        System.out.println(account5);
-        account1.deposit(20);
-        account2.withdraw(10);
-        account3.withdraw(100);
-        account4.deposit(73.11);
-        account5.withdraw(11);
-        account6.deposit(5);
+        int[] accountNumbers = bank.getAccountNumbers();
 
-        System.out.println(account2);
-        System.out.println(account5);
+        for (int i = 0; i < accountNumbers.length; i++) {
+            Account account = bank.getAccount(accountNumbers[i]);
+            double transaction = transactions[i];
+
+            if (transactions[i] < 0) {
+                account.withdraw(Math.abs(transaction));
+            } else {
+                account.deposit(transaction);
+            }
+        }
+
+        bank.report();
         bank.update();
+        bank.report();
+        bank.payDividend(30d);
+        bank.report();
     }
 }

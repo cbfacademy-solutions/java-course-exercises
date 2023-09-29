@@ -89,12 +89,26 @@ public class Bank {
     }
 
     /**
+     * Reports the balance of all accounts in the bank.
+     */
+    public void report() {
+        System.out.println("");
+        System.out.println("Bank report:");
+
+        for (Account account : accounts) {
+            System.out.println(account);
+        }
+    }
+
+    /**
      * Updates all accounts in the bank.
      * If the account is a savings account, interest will be applied.
      * If the account is a current account and currently overdrawn, a letter will be
      * sent to the holder.
      */
     public void update() {
+        System.out.println("");
+        System.out.println("Updated accounts");
         for (Account account : accounts) {
             if (account instanceof SavingsAccount) {
                 ((SavingsAccount) account).applyInterest();
@@ -114,6 +128,8 @@ public class Bank {
      * @param dividend The dividend value.
      */
     public void payDividend(double dividend) {
+        System.out.println("");
+        System.out.println(String.format("Paid dividend of £%.2f", dividend));
         for (Account account : accounts) {
             account.deposit(dividend);
         }
