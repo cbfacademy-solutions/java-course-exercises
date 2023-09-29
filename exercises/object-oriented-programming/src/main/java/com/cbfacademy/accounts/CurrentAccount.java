@@ -70,7 +70,7 @@ public class CurrentAccount extends Account {
      * Set the overdraft for this current account
      * @param overdraftLimit The overdraft limit granted for this current account
      */
-    public void setInterestRate(double overdraftLimit) {
+    public void setOverdraftLimit(double overdraftLimit) {
         this.overdraftLimit = overdraftLimit;
     }
 }
