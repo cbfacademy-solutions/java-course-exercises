@@ -1,4 +1,4 @@
-package com.cbfacademy;
+package com.cbfacademy.sort;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -7,7 +7,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-@DisplayName(value = "App Test Suite")
+@DisplayName(value = "Basic Test Suite")
 public class AppTest {
 
     @Test
