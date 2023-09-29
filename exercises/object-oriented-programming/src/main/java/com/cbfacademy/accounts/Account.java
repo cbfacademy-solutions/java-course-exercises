@@ -15,8 +15,8 @@ public class Account {
      * @param balance The initial balance of the new account.
      */
     public Account(int accountNumber, double balance) {
-        this.accountNumber = accountNumber;
-        this.balance = balance;
+        this.accountNumber = Math.abs(accountNumber);
+        this.balance = Math.abs(balance);
     }
 
     /**
@@ -26,7 +26,10 @@ public class Account {
      * @return The updated balance after the deposit.
      */
     public double deposit(double amount) {
-        balance += Math.abs(amount);
+        if (amount > 0) {
+            balance += amount;
+        }
+
         return balance;
     }
 

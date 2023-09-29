@@ -19,7 +19,7 @@ public class SavingsAccount extends Account {
      */
     public SavingsAccount(int accountNumber, double balance, double interestRate) {
         super(accountNumber, balance);
-        this.interestRate = interestRate;
+        this.interestRate = Math.abs(interestRate);
     }
 
     /**
@@ -36,7 +36,9 @@ public class SavingsAccount extends Account {
      * @param interestRate The interest rate associated with the savings account
      */
     public void setInterestRate(double interestRate) {
-        this.interestRate = interestRate;
+        if (interestRate >= 0) {
+            this.interestRate = interestRate;
+        }
     }
 
     /**
