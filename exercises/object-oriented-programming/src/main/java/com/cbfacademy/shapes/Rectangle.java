@@ -25,7 +25,7 @@ public class Rectangle extends Shape {
      * @return The area of the rectangle.
      */
     @Override
-    public double area() {
+    public double getArea() {
         return length * width;
     }
 }

@@ -11,9 +11,9 @@ public class PaintShapes {
         Paint paint = new Paint(350);
         double paintNeeded = 0;
         
-        paintNeeded += paint.amount(deck);
-        paintNeeded += paint.amount(ball);
-        paintNeeded += paint.amount(tank);
+        paintNeeded += paint.getAmount(deck);
+        paintNeeded += paint.getAmount(ball);
+        paintNeeded += paint.getAmount(tank);
         System.out.println("Overall amount of paint needed: " + String.format("%.2f", paintNeeded) + " gallons");
     }
 }

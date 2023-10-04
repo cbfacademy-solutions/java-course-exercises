@@ -25,7 +25,7 @@ public class Cylinder extends Shape {
      * @return The area of the cylinder.
      */
     @Override
-    public double area() {
+    public double getArea() {
         return height * Math.PI * (radius * radius);
     }
 }
