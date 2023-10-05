@@ -62,7 +62,7 @@ swap(arr, leftIndex, rightIndex)
 
 Given what we've learned about this algorithm, create a `QuickSort` class in the `com.cbfacademy.sort` package. Your class must implement the provided `ArraySorter` interface.
 
-## :white_check_mark: Verify Your Implementation
+#### :white_check_mark: Verify Your Implementation
 
 To verify that your code works as expected, run the `QuickSortTest` tests.
 
@@ -110,7 +110,7 @@ Given what we've learned about this algorithm, create a `BinarySearch` class in 
   - if the target value is found in the given array, the method should return the index for that value
   - if the target value is not present, the method should return -1
 
-## :white_check_mark: Verify Your Implementation
+#### :white_check_mark: Verify Your Implementation
 
 To verify that your code works as expected, run the `BinarySearchTest` tests.
 
