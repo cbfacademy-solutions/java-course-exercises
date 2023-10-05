@@ -13,24 +13,63 @@ For the exercises below, we've provided the starter project above.
 
 ## :pushpin: Classes & Objects
 
-Inside the `cars` package, create a class called `Car` with the following private fields:
-- `String make`
-- `String model`
-- `int year`
+### Part 1
 
-and the following public methods:
-- `Car(String make, String model, int year)` - constructor that accepts initial values for the fields
-- `String getMake()` - returns the car make
-- `String getModel()` - returns the car model
-- `int getYear()` - returns the year the car was made
-- `String getDetails()` - returns the car details, including the make, model and year
+Inside the `cars` package, create a class called `Car` with the following members:
+- `private String make`
+- `private String model`
+- `private int year`
+- `public Car(String make, String model, int year)` - constructor that accepts parameters representing the make, model and year of the car
+- `public String getMake()` - returns the car make
+- `public String getModel()` - returns the car model
+- `public int getYear()` - returns the year the car was made
+- `public String getDetails()` - returns the car details, including the make, model and year
 
-Create a class called `Showroom` with a public method `List<Car> getCars()` that returns a list containing the following three `Car` objects:
-- a Volvo V40 from 2012
-- a Porsche Panamera from 2009
-- an Audi A3 from 2018
+#### :white_check_mark: Verify Your Implementation
+
+To verify that your code works as expected, run the `CarTest` tests.
+
+In your terminal, ensure that you are in the `object-oriented-programming` folder, then run the following command:
+
+```shell
+./mvnw clean test -Dtest=CarTest
+```
+
+If you are on Windows, run this command instead:
+
+```bat
+mvnw.cmd clean test -Dtest=CarTest
+```
+
+Your implementation is correct when all tests pass.
+
+### Part 2
+
+Create a class called `Showroom` with the following members:
+- `public List<Car> getCars()` - returns a list containing the following three `Car` objects:
+  - a Volvo V40 from 2012
+  - a Porsche Panamera from 2009
+  - an Audi A3 from 2018
 
 In the `main` method of the `App` class, instantiate a `Showroom` object, call `getCars()` and print the details for each `Car` instance in the list.
+
+#### :white_check_mark: Verify Your Implementation
+
+To verify that your code works as expected, run the `ShowroomTest` tests.
+
+In your terminal, run the following command:
+
+```shell
+./mvnw clean test -Dtest=ShowroomTest
+```
+
+If you are on Windows, run this command instead:
+
+```bat
+mvnw.cmd clean test -Dtest=ShowroomTest
+```
+
+Your implementation is correct when all tests pass.
 
 ## :pushpin: Inheritance
 
