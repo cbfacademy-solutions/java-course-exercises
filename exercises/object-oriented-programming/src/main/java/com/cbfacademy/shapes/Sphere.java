@@ -22,7 +22,7 @@ public class Sphere extends Shape {
      * @return The area of the sphere.
      */
     @Override
-    public double area() {
+    public double getArea() {
         return 4 * Math.PI * (radius * radius);
     }
 }

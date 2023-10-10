@@ -1,22 +1,24 @@
 package com.cbfacademy.accounts;
 
 /**
- * The Account class represents a generic bank account with an account number and a balance.
+ * The Account class represents a generic bank account with an account number
+ * and a balance.
  * It provides methods to deposit, withdraw, and retrieve account information.
  */
 public class Account {
-    protected long accountNumber;
+    protected int accountNumber;
     protected double balance;
 
     /**
-     * Constructs a new Account object with the specified account number and initial balance.
+     * Constructs a new Account object with the specified account number and initial
+     * balance.
      *
      * @param accountNumber The account number to be assigned to the new account.
-     * @param balance The initial balance of the new account.
+     * @param balance       The initial balance of the new account.
      */
-    public Account(long accountNumber, double balance) {
-        this.accountNumber = accountNumber;
-        this.balance = balance;
+    public Account(int accountNumber, double balance) {
+        this.accountNumber = Math.abs(accountNumber);
+        this.balance = Math.abs(balance);
     }
 
     /**
@@ -26,21 +28,29 @@ public class Account {
      * @return The updated balance after the deposit.
      */
     public double deposit(double amount) {
-        balance += Math.abs(amount);
+        if (amount > 0) {
+            balance += amount;
+        }
+
         return balance;
     }
 
     /**
-     * Withdraws the requested amount from the account if sufficient funds are available.
+     * Withdraws the requested amount from the account if sufficient funds are
+     * available.
      *
      * @param requested The amount to be withdrawn. A positive value is expected.
-     * @return The amount actually withdrawn from the account. If the withdrawal is successful,
-     *         the returned value will be equal to the requested amount. Otherwise, it will be 0.
+     * @return The amount actually withdrawn from the account. If the withdrawal is
+     *         successful,
+     *         the returned value will be equal to the requested amount. Otherwise,
+     *         it will be 0.
      */
     public double withdraw(double requested) {
         double granted = 0;
 
-        requested = Math.abs(requested);
+        if (requested <= 0) {
+            return granted;
+        }
 
         if (balance >= requested) {
             balance -= requested;
@@ -55,7 +65,7 @@ public class Account {
      *
      * @return The account number.
      */
-    public long getAccountNumber() {
+    public int getAccountNumber() {
         return accountNumber;
     }
 

@@ -11,14 +11,14 @@ public abstract class Shape {
      *
      * @return The area of the shape.
      */
-    public abstract double area();
+    public abstract double getArea();
 
     /**
      * Get the name of the shape.
      *
      * @return The name of the shape.
      */
-    public String toString() {
+    public String getName() {
         return shapeName;
     }
 }

@@ -16,7 +16,7 @@ public class CurrentAccount extends Account {
      * @param overdraftLimit The overdraft limit associated with the current account.
      *                       This represents the maximum negative balance allowed for the account.
      */
-    public CurrentAccount(long accountNumber, double balance, double overdraftLimit) {
+    public CurrentAccount(int accountNumber, double balance, double overdraftLimit) {
         super(accountNumber, balance);
         this.overdraftLimit = overdraftLimit;
     }
@@ -55,5 +55,22 @@ public class CurrentAccount extends Account {
         String sign = balance < 0 ? "-£" : "£";
 
         return "Account no: " + accountNumber + ". Balance: " + sign + String.format("%.2f", Math.abs(balance));
+    }
+
+    /**
+     * Retrieves the overdraft limit associated with this current account.
+     *
+     * @return The overdraft limit.
+     */
+    public double getOverdraftLimit() {
+        return overdraftLimit;
+    }
+
+    /**
+     * Set the overdraft for this current account
+     * @param overdraftLimit The overdraft limit granted for this current account
+     */
+    public void setOverdraftLimit(double overdraftLimit) {
+        this.overdraftLimit = overdraftLimit;
     }
 }

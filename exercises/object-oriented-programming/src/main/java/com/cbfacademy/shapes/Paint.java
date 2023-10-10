@@ -21,8 +21,8 @@ public class Paint {
      * @param shape The shape to be painted.
      * @return The amount of paint needed in gallons.
      */
-    public double amount(Shape shape) {
-        double area = shape.area();
+    public double getAmount(Shape shape) {
+        double area = shape.getArea();
         
         return area / coverage;
     }

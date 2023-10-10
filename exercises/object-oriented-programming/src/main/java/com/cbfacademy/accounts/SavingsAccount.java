@@ -17,9 +17,9 @@ public class SavingsAccount extends Account {
      * @param interestRate The interest rate associated with the savings account, represented as a decimal value.
      *                     For example, an interest rate of 0.05 represents 5% interest.
      */
-    public SavingsAccount(long accountNumber, double balance, double interestRate) {
+    public SavingsAccount(int accountNumber, double balance, double interestRate) {
         super(accountNumber, balance);
-        this.interestRate = interestRate;
+        this.interestRate = Math.abs(interestRate);
     }
 
     /**
@@ -29,6 +29,16 @@ public class SavingsAccount extends Account {
      */
     public double getInterestRate() {
         return interestRate;
+    }
+
+    /**
+     * Set the interest rate for this savings account
+     * @param interestRate The interest rate associated with the savings account
+     */
+    public void setInterestRate(double interestRate) {
+        if (interestRate >= 0) {
+            this.interestRate = interestRate;
+        }
     }
 
     /**
