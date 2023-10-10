@@ -34,6 +34,6 @@ public class Car {
     }
 
     public String getDetails() {
-        return make + " " + model + " (" + year + ")";
+        return String.format("%s %s %s (%d)", colour, make, model, year);
     }
 }
