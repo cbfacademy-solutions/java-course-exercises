@@ -3,11 +3,13 @@ package com.cbfacademy.cars;
 public class Car {
     private String make;
     private String model;
+    private String colour;
     private int year;
 
-    public Car(String make, String model, int year) {
+    public Car(String make, String model, String colour, int year) {
         this.make = make;
         this.model = model;
+        this.colour = colour;
         this.year = year;
     }
 
@@ -17,6 +19,14 @@ public class Car {
 
     public String getModel() {
         return model;
+    }
+
+    public String getColour() {
+        return colour;
+    }
+
+    public void setColour(String colour) {
+        this.colour = colour;
     }
 
     public int getYear() {
