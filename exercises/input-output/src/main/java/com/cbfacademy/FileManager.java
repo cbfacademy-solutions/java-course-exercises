@@ -1,6 +1,9 @@
 package com.cbfacademy;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -9,13 +12,14 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * A utility class for managing file operations.
  */
 public class FileManager {
     /**
-     * Read a text file using a BufferedReader and return a Stream of lines.
+     * Step 1: Read a text file using a BufferedReader and return a Stream of lines.
      *
      * @param filename The name of the file to read.
      * @return A Stream of lines from the file.
@@ -24,11 +28,9 @@ public class FileManager {
     public List<String> readFile(String filename) throws IOException {
         Path filePath = Paths.get(filename);
 
-        // try (BufferedReader reader = new BufferedReader(new
-        // FileReader(filePath.toString()))) {
-        // return reader.lines().collect(Collectors.toList());
-        // }
-        return Files.readAllLines(filePath);
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath.toString()))) {
+            return reader.lines().collect(Collectors.toList());
+        }
     }
 
     /**
@@ -42,18 +44,40 @@ public class FileManager {
         Path inputPath = Paths.get(inputFile);
         Path outputPath = Paths.get(outputFile);
 
-        // try (BufferedReader reader = new BufferedReader(new FileReader(inputPath.toString()));
-        //         BufferedWriter writer = new BufferedWriter(new FileWriter(outputPath.toString()))) {
-        //     String line;
+        try (BufferedReader reader = new BufferedReader(new FileReader(inputPath.toString()));
+                BufferedWriter writer = new BufferedWriter(new FileWriter(outputPath.toString()))) {
+            String line;
 
-        //     while ((line = reader.readLine()) != null) {
-        //         writer.write(line);
-        //         writer.newLine();
-        //     }
-        // }
+            while ((line = reader.readLine()) != null) {
+                writer.write(line);
+                writer.newLine();
+            }
+        }
+    }
 
-        // Ensure the output file's parent directory exists
-        Files.createDirectories(outputPath.getParent());
+    /**
+     * Step 2: Update to use the java.nio.* classes
+     *
+     * @param filename The name of the file to read.
+     * @return A Stream of lines from the file.
+     * @throws IOException If an I/O error occurs while reading the file.
+     */
+    public List<String> readFileNio(String filename) throws IOException {
+        Path filePath = Paths.get(filename);
+
+        return Files.readAllLines(filePath);
+    }
+
+    /**
+     * Copy the contents of one file to another.
+     *
+     * @param inputFile  The name of the source file to copy from.
+     * @param outputFile The name of the target file to copy to.
+     * @throws IOException If an I/O error occurs during the copy process.
+     */
+    public void copyNio(String inputFile, String outputFile) throws IOException {
+        Path inputPath = Paths.get(inputFile);
+        Path outputPath = Paths.get(outputFile);
 
         // Copy the contents from input to output
         Files.copy(inputPath, outputPath, StandardCopyOption.REPLACE_EXISTING);
