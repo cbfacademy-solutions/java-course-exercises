@@ -33,8 +33,4 @@ public class StringExercises {
 
         return true;
     }
-
-    public String getName() {
-        return "String Exercises";
-    }
 }
