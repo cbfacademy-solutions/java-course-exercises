@@ -4,10 +4,10 @@
 [![JUnit5 Testing Framework](https://img.shields.io/badge/testing%20framework-JUnit5-26A162.svg?style=for-the-badge)][2]
 [![Maven Dependency Manager](https://img.shields.io/badge/dependency%20manager-Maven-AA215A.svg?style=for-the-badge)][3]
 
-The goal of these exercises is to practise OOP concepts:
-- Encapsulation
-- Inheritance
-- Abstraction
+The goal of these exercises is to practise these OOP concepts:
+- [Classes & Objects](#pushpin-classes--objects)
+- [Inheritance](#pushpin-inheritance)
+- [Abstraction](#pushpin-abstraction)
 
 For the exercises below, we've provided the starter project above.
 
