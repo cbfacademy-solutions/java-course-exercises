@@ -242,6 +242,39 @@ Consider the following ideas:
 - print the amount of paint needed for each item
 - print the overall amount of paint needed to the screen
 
+## :pushpin: Interfaces
+
+Inside the `words` package, create a class `ReverseCharSequence` that implements the `CharSequence` interface found in the `java.lang` package. 
+
+You will need to implement and override the following methods: 
+```
+public int length();
+public char charAt(int index);
+public CharSequence subsequence(int start, int end);
+public String toString();
+```
+
+Your implementation should return the string backwards. 
+
+#### :white_check_mark: Verify Your Implementation
+
+To verify that your code works as expected, run the `ReverseCharSequenceTest` tests.
+
+In your terminal, run the following command:
+
+```shell
+./mvnw clean test -Dtest=ReverseCharSequenceTest
+```
+
+If you are on Windows, run this command instead:
+
+```bat
+mvnw.cmd clean test -Dtest=ReverseCharSequenceTest
+```
+
+Your implementation is correct when all tests pass.
+
+
 [1]: https://docs.oracle.com/javase/11/docs/api/index.html
 [2]: https://junit.org/junit5/
 [3]: https://maven.apache.org/
