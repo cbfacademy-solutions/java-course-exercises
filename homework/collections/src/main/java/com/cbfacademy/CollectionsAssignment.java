@@ -16,7 +16,7 @@ public class CollectionsAssignment {
      * than the indicated integer. The remaining elements retain their original
      * ordering.
      *
-     * @param list   - the list of integers
+     * @param list     - the list of integers
      * @param minValue the minimum value to retain
      */
     public static void removeSmallInts(List<Integer> list, int minValue) {
@@ -58,7 +58,7 @@ public class CollectionsAssignment {
      * @param ints1 - the first collection
      * @param ints2 - the second collection
      * @return A sorted ArrayList containing the integers that appear in either
-     * collection.
+     *         collection.
      */
     public static ArrayList<Integer> inEither(Collection<Integer> ints1, Collection<Integer> ints2) {
         // This must be done with no loops.
@@ -80,7 +80,7 @@ public class CollectionsAssignment {
      * @param ints1 - the first collection
      * @param ints2 - the second collection
      * @return An ArrayList containing the integers that appear in both
-     * collections.
+     *         collections.
      */
     public static ArrayList<Integer> inBoth(Collection<Integer> ints1, Collection<Integer> ints2) {
         // This must be done with no loops.
@@ -128,9 +128,5 @@ public class CollectionsAssignment {
         }
 
         return mostFrequentString;
-    }
-
-    public static String getName() {
-        return "Collections Assignment";
     }
 }
