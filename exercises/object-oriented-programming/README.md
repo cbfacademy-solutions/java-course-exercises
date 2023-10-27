@@ -8,6 +8,7 @@ The goal of these exercises is to practise these OOP concepts:
 - [Classes & Objects](#pushpin-classes--objects)
 - [Inheritance](#pushpin-inheritance)
 - [Abstraction](#pushpin-abstraction)
+- [Interfaces](#pushpin-interfaces)
 
 For the exercises below, we've provided the starter project above.
 
