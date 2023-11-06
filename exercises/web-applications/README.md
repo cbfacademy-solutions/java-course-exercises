@@ -58,6 +58,7 @@ Refer to [this documentation][2] and create a HTML form in `login-form.html` tha
 ![HTML Form](./html-form.png)
 
 Note: you are **not** expected to achieve something with the same styling as the image shown! 
+** Learn about the anatomy of an HTML Document (here)[https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics#anatomy_of_an_html_document]
 
 [1]: https://developer.mozilla.org/en-US/docs/Web/HTML
 [2]: https://developer.mozilla.org/en-US/docs/Learn/Forms/HTML5_input_types
