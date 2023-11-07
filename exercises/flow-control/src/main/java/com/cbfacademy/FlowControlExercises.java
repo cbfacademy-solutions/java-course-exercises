@@ -1,7 +1,6 @@
 package com.cbfacademy;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,12 +8,13 @@ import java.util.Map;
 public class FlowControlExercises {
 
     public List<String> fizzBuzz(List<Integer> numbers) {
-        //  it creates a list where for each element of the input list ${numbers}
-        //  - if the ${element} is divisible by 3, it adds “Fizz” to the list
-        //  - if the ${element} is divisible by 5, it adds “Buzz” to the list
-        //  - if the ${element} is divisible by both 3 and 5, it adds “FizzBuzz” to the list
-        //  - it adds the element to the list in any other case
-        //  - it returns the constructed list
+        // it creates a list where for each element of the input list ${numbers}
+        // - if the ${element} is divisible by 3, it adds “Fizz” to the list
+        // - if the ${element} is divisible by 5, it adds “Buzz” to the list
+        // - if the ${element} is divisible by both 3 and 5, it adds “FizzBuzz” to the
+        // list
+        // - it adds the element to the list in any other case
+        // - it returns the constructed list
         List<String> strings = new ArrayList<String>();
 
         numbers.forEach(number -> {
@@ -34,8 +34,9 @@ public class FlowControlExercises {
     }
 
     public String whichMonth(Integer number) {
-        //  - it returns the month corresponding to the input ${number}
-        //  - if the ${number} is invalid, the method should return "Invalid month number"
+        // - it returns the month corresponding to the input ${number}
+        // - if the ${number} is invalid, the method should return "Invalid month
+        // number"
         switch (number) {
             case 1:
                 return "January";
@@ -67,11 +68,11 @@ public class FlowControlExercises {
     }
 
     public Map<String, Integer> sumOfOddsAndSumOfEvens() {
-        //  - creates and initialises a list of 100 numbers - from 1 to 100
-        //  - determines the sum of all the even numbers in the list
-        //  - determines the sum of all the odd numbers in the list
-        //  - returns a map with two entries:
-        //      {"SumOfEvens", calculatedSumOfEvens}, {"SumOfOdds", calculatedSumOfOdds}
+        // - creates and initialises a list of 100 numbers - from 1 to 100
+        // - determines the sum of all the even numbers in the list
+        // - determines the sum of all the odd numbers in the list
+        // - returns a map with two entries:
+        // {"SumOfEvens", calculatedSumOfEvens}, {"SumOfOdds", calculatedSumOfOdds}
         List<Integer> numbers = new ArrayList<Integer>();
         int sumOfEvens = 0;
         int sumOfOdds = 0;
@@ -97,17 +98,5 @@ public class FlowControlExercises {
                 put("SumOfOdds", calculatedSumOfOdds);
             }
         };
-    }
-
-    public List<Integer> reverse(ArrayList<Integer> numbers) {
-        //  - it takes an array list of integers
-        //  - it returns the list in reverse order
-        Collections.reverse(numbers);
-
-        return numbers;
-    }
-
-    public String getName() {
-        return "Flow Control Exercises";
     }
 }
