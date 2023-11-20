@@ -14,7 +14,7 @@ The goal of these programming exercises is to practise:
 Analyse the following HTTP request:
 
 ```
-    GET /martignon/index.html HTTP/1.1
+    GET https://www.google.com HTTP/1.1
     Host: cs.unibg.it
     User Agent: Mozilla/5.0 (Macintosh; U; PPC Mac OS X; en) AppleWebKit/124
     (KHTML, like Gecko) Safari/125
@@ -42,19 +42,23 @@ An HTTP client sends the following message:
     If-modified-since: 27 Feb 2017 08:10:00
 ```
 
-Write down two feasible responses of the HTTP server (only the status line)
+Write down two feasible responses of the HTTP server (only the status line).
 
 ## :spider_web: HTML
 
 An HTML Form is a section of the document that collects input from the user. The input from the user is generally sent to a server (Web servers, Mail clients, etc). We use the HTML `<form>` element to create forms in HTML.
 
-Read [this documentation][2], and create a HTML form that looks like the following:
+Refer to [this documentation][2] and create a HTML form in `login-form.html` that contains:
+- an email field 
+- a password field
+- a checkbox
+- a 'forgot password' link, and 
+- a sign in button.
 
 ![HTML Form](./html-form.png)
 
-
-
-
+Note: you are **not** expected to achieve something with the same styling as the image shown! 
+** Learn about the anatomy of an HTML Document (here)[https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics#anatomy_of_an_html_document]
 
 [1]: https://developer.mozilla.org/en-US/docs/Web/HTML
 [2]: https://developer.mozilla.org/en-US/docs/Learn/Forms/HTML5_input_types
