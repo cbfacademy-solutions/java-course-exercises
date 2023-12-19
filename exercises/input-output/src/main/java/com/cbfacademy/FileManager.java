@@ -110,18 +110,6 @@ public class FileManager {
         Collections.reverse(lines);
 
         // Write the reversed lines to the output file
-        try (BufferedWriter writer = Files.newBufferedWriter(outputPath, StandardCharsets.UTF_8)) {
-            Boolean firstLine = true;
-
-            for (String line : lines) {
-                if (firstLine) {
-                    firstLine = !firstLine;
-                } else {
-                    writer.newLine();
-                }
-
-                writer.write(line);
-            }
-        }
+        Files.write(outputPath, lines);
     }
 }
