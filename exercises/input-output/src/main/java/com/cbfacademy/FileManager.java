@@ -47,10 +47,16 @@ public class FileManager {
         try (BufferedReader reader = new BufferedReader(new FileReader(inputPath.toString()));
                 BufferedWriter writer = new BufferedWriter(new FileWriter(outputPath.toString()))) {
             String line;
+            Boolean firstLine = true;
 
             while ((line = reader.readLine()) != null) {
+                if (firstLine) {
+                    firstLine = !firstLine;
+                } else {
+                    writer.newLine();
+                }
+
                 writer.write(line);
-                writer.newLine();
             }
         }
     }
