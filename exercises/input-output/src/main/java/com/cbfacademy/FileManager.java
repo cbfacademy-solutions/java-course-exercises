@@ -47,10 +47,16 @@ public class FileManager {
         try (BufferedReader reader = new BufferedReader(new FileReader(inputPath.toString()));
                 BufferedWriter writer = new BufferedWriter(new FileWriter(outputPath.toString()))) {
             String line;
+            Boolean firstLine = true;
 
             while ((line = reader.readLine()) != null) {
+                if (firstLine) {
+                    firstLine = !firstLine;
+                } else {
+                    writer.newLine();
+                }
+
                 writer.write(line);
-                writer.newLine();
             }
         }
     }
@@ -104,18 +110,6 @@ public class FileManager {
         Collections.reverse(lines);
 
         // Write the reversed lines to the output file
-        try (BufferedWriter writer = Files.newBufferedWriter(outputPath, StandardCharsets.UTF_8)) {
-            Boolean firstLine = true;
-
-            for (String line : lines) {
-                if (firstLine) {
-                    firstLine = !firstLine;
-                } else {
-                    writer.newLine();
-                }
-
-                writer.write(line);
-            }
-        }
+        Files.write(outputPath, lines);
     }
 }
