@@ -4,10 +4,10 @@
 [![JUnit5 Testing Framework](https://img.shields.io/badge/testing%20framework-JUnit5-26A162.svg?style=for-the-badge)][2]
 [![Maven Dependency Manager](https://img.shields.io/badge/dependency%20manager-Maven-AA215A.svg?style=for-the-badge)][3]
 
-The goal of these exercises is to practise OOP concepts:
-- Encapsulation
-- Inheritance
-- Abstraction
+The goal of these exercises is to practise these OOP concepts:
+- [Classes & Objects](#pushpin-classes--objects)
+- [Inheritance](#pushpin-inheritance)
+- [Abstraction](#pushpin-abstraction)
 
 For the exercises below, we've provided the starter project above.
 
@@ -25,7 +25,7 @@ Inside the `cars` package, create a class called `Car` with the following member
 - `public String getModel()` - returns the car model
 - `public int getYear()` - returns the year the car was made
 - `public String getColour()` - returns the colour of the car
-- `public String setColour()` - sets the colour of the car
+- `public void setColour()` - sets the colour of the car
 - `public String getDetails()` - returns the car details, including the make, model, colour and year
 
 #### :white_check_mark: Verify Your Implementation
