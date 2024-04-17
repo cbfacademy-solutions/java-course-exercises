@@ -106,7 +106,7 @@ do until the pointers low and high meet each other.
         high = mid - 1
 ```
 
-Given what we've learned about this algorithm, create a `BinarySearch` class in the `com.cbfacademy.search` package. Your class must implement the provided `Search` interface.
+Given what we've learned about this algorithm, create a `BinarySearch` class in the `com.cbfacademy.search` package under the `search` module. Your class must implement the provided `Search` interface.
   - if the target value is found in the given array, the method should return the index for that value
   - if the target value is not present, the method should return -1
 
@@ -114,17 +114,17 @@ Given what we've learned about this algorithm, create a `BinarySearch` class in 
 
 To verify that your code works as expected, run the `BinarySearchTest` tests.
 
-In your terminal, ensure that you are in the `algorithms/search` folder.
+In your terminal, ensure that you are in the `algorithms` folder.
 Then run the following command in your terminal.
 
 ```shell
-./mvnw clean test
+./mvnw --projects search clean test
 ```
 
 If you are on Windows, run this command instead:
 
 ```shell
-mvnw.cmd clean test
+mvnw --projects search clean test
 ```
 
 Your implementation is correct when all tests pass.
