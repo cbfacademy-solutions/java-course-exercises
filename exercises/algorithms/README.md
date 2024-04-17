@@ -60,23 +60,23 @@ swap(arr, leftIndex, rightIndex)
     arr[rightIndex] = temp
 ```
 
-Given what we've learned about this algorithm, create a `QuickSort` class in the `com.cbfacademy.sort` package. Your class must implement the provided `ArraySorter` interface.
+Given what we've learned about this algorithm, create a `QuickSort` class in the `com.cbfacademy.sort` package under the `sort` module. Your class must implement the provided `ArraySorter` interface.
 
 #### :white_check_mark: Verify Your Implementation
 
 To verify that your code works as expected, run the `QuickSortTest` tests.
 
-In your terminal, ensure that you are in the `algorithms/sort` folder.
+In your terminal, ensure that you are in the `algorithms` folder.
 Then run the following command in your terminal.
 
 ```shell
-./mvnw clean test
+./mvnw --projects sort clean test
 ```
 
 If you are on Windows, run this command instead:
 
 ```shell
-mvnw.cmd clean test
+mvnw --projects sort clean test
 ```
 
 Your implementation is correct when all tests pass.
