@@ -49,4 +49,15 @@ public class SavingsAccount extends Account {
     public void applyInterest() {
         deposit(balance * interestRate);
     }
+
+    /**
+     * Returns a string representation of a savings account.
+     * Displays the account number, balance, and interest rate.
+     *
+     * @return A formatted string displaying the account number, balance, and interest rate.
+     */
+    @Override
+    public String toString() {
+        return String.format("%s. Interest rate: %.2f%%", super.toString(), (interestRate * 100f));
+    }
 }

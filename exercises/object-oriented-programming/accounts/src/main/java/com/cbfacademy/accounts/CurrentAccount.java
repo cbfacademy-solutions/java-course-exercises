@@ -52,9 +52,9 @@ public class CurrentAccount extends Account {
      */
     @Override
     public String toString() {
-        String sign = balance < 0 ? "-£" : "£";
+        String sign = balance < 0 ? "-" : "";
 
-        return "Account no: " + accountNumber + ". Balance: " + sign + String.format("%.2f", Math.abs(balance));
+        return String.format("Account no: %d. Balance: %s£%.2f", accountNumber, sign, Math.abs(balance));
     }
 
     /**
