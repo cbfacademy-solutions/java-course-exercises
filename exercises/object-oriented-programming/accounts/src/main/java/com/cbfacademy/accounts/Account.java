@@ -85,6 +85,6 @@ public class Account {
      */
     @Override
     public String toString() {
-        return "Account no: " + accountNumber + ". Balance: £" + String.format("%.2f", balance);
+        return String.format("Account no: %s. Balance: £%.2f", accountNumber, balance);
     }
 }
