@@ -13,9 +13,6 @@
     }
   },
 
-  // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "./mvnw dependency:resolve",
-
   // Configure tool-specific properties.
   "customizations": {
     // Configure properties specific to VS Code.
