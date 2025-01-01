@@ -4,8 +4,15 @@ package com.cbfacademy.shapes;
  * An abstract class representing a Shape.
  */
 public abstract class Shape {
-    protected String shapeName;
+    private String shapeName;
 
+    public Shape() {
+        this("Shape");
+    }
+
+    public Shape(String shapeName) {
+        this.shapeName = shapeName;
+    }
     /**
      * Abstract method to calculate the area of the shape.
      *

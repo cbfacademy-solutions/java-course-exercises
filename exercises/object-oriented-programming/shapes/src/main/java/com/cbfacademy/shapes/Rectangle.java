@@ -14,7 +14,7 @@ public class Rectangle extends Shape {
      * @param width  The width of the rectangle.
      */
     public Rectangle(double length, double width) {
-        this.shapeName = "Rectangle";
+        super("Rectangle");
         this.length = length;
         this.width = width;
     }

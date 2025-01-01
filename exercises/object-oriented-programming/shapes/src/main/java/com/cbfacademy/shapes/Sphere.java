@@ -12,7 +12,7 @@ public class Sphere extends Shape {
      * @param radius The radius of the sphere.
      */
     public Sphere(double radius) {
-        this.shapeName = "Sphere";
+        super("Sphere");
         this.radius = radius;
     }
 
