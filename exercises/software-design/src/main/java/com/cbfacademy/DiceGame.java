@@ -6,8 +6,10 @@ public class DiceGame implements Game {
     private int targetScore = 30;
 
     public DiceGame() {
-        player1 = new DicePlayer();
-        player2 = new DicePlayer();
+        this(new DicePlayer(), new DicePlayer());
+    }
+
+    public DiceGame(Player player1, Player player2) {
         player1.setName("Player 1");
         player2.setName("Player 2");
     }
