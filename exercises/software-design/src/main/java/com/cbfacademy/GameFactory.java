@@ -7,6 +7,6 @@ public class GameFactory {
      * @return A dice game.
      */
     public static Game create() {
-        return new DiceGame(new DicePlayer(), new DicePlayer());
+        return new DiceGame(PlayerFactory.create(), PlayerFactory.create());
     }
 }
