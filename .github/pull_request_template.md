@@ -19,10 +19,13 @@
 - [ ] Bug fix (non-breaking change which fixes an issue)
 - [ ] New feature (non-breaking change which adds functionality)
 - [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
-- [ ] Test addition/modification (change that adds or modifies tests)
-- [ ] Exercise solution (implementation of an exercise solution)
+- [ ] Test (change that adds or modifies tests)
 - [ ] Documentation (change to documentation)
-- [ ] Refactoring (improvement to code structure without changing functionality)
+- [ ] Refactor (improvement to code structure without changing functionality)
+- [ ] Style (code formatting changes that don't affect functionality; e.g. whitespace, missing semi-colons, etc)
+- [ ] Build (changes to build system or external dependencies)
+- [ ] CI (changes to continuous integration configuration files and scripts)
+- [ ] Chore (other updates that don't affect production code)
 
 ## Checklist:
 <!--- Go over all the following points, and put an `x` in all the boxes that apply. -->

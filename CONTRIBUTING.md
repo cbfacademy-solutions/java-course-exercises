@@ -42,7 +42,7 @@ git switch -c JIRA-1234
 
 ### Install Dependencies (If Applicable)
 
-Each exercise has its own dependencies, follow the instructions provided in the relevant README.md file.
+Each exercise has its own dependencies; follow the instructions provided in the relevant README.md file.
 
 ## ✏️ Making Contributions
 
